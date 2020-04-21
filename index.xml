@@ -1,0 +1,12 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>PYHOME | PYHOME</title>
+        <link>https://shaopus.github.io/</link>
+        <description>PYHOME | PYHOME</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 17 Apr 2020 12:52:51 &#43;0800</lastBuildDate><atom:link href="https://shaopus.github.io/" rel="self" type="application/rss+xml" /><item>
+                <title>Posts</title>
+                <link>https://shaopus.github.io/posts/</link>
+                <pubDate>Fri, 17 Apr 2020 12:52:51 &#43;0800</pubDate><guid>https://shaopus.github.io/posts/</guid>
+                <description></description>
+            </item></channel>
+</rss>

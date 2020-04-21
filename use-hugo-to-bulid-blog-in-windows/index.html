@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Windows&#43;Hugo&#43;GithubPage搭建简单个人博客 | PYHOME</title>
+        <meta name="Description" content="这是我的个人网站"><meta property="og:title" content="Windows&#43;Hugo&#43;GithubPage搭建简单个人博客" />
+<meta property="og:description" content="安装 hugo 二进制安装(推荐：简单、快速)，到 hugo Releases 下载对应的操作系统版本的 hugo 二进制文件（ hugo 或者 hugo.exe ）； 创建文件夹。此处举例： F 盘创建 hugo/bin ，将解压后的 hugo.exe" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://shaopus.github.io/use-hugo-to-bulid-blog-in-windows/" />
+<meta property="article:published_time" content="2020-04-17T12:52:51+08:00" />
+<meta property="article:modified_time" content="2020-04-17T12:52:51+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Windows&#43;Hugo&#43;GithubPage搭建简单个人博客"/>
+<meta name="twitter:description" content="安装 hugo 二进制安装(推荐：简单、快速)，到 hugo Releases 下载对应的操作系统版本的 hugo 二进制文件（ hugo 或者 hugo.exe ）； 创建文件夹。此处举例： F 盘创建 hugo/bin ，将解压后的 hugo.exe"/>
+<meta name="theme-color" content="#ffffff">
+<meta name="msapplication-TileColor" content="#da532c">
+<link rel="canonical" href="https://shaopus.github.io/use-hugo-to-bulid-blog-in-windows/" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><link rel="stylesheet" href="/css/style.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Windows\x2bHugo\x2bGithubPage搭建简单个人博客",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/shaopus.github.io\/use-hugo-to-bulid-blog-in-windows\/"
+        },"image": {
+                "@type": "ImageObject",
+                "url": "https:\/\/shaopus.github.io\/cover.png",
+                "width":  800 ,
+                "height":  600 
+            },"genre": "posts","wordcount":  1235 ,
+        "url": "https:\/\/shaopus.github.io\/use-hugo-to-bulid-blog-in-windows\/","datePublished": "2020-04-17","dateModified": "2020-04-17","publisher": {
+                "@type": "Organization",
+                "name": "xxxx",
+                "logo": {
+                "@type": "ImageObject",
+                "url": "https:\/\/shaopus.github.io\/logo.png",
+                "width":  127 ,
+                "height":  40 
+                }
+            },"author": {
+                "@type": "Person",
+                "name": "xxxx"
+            },"description": ""
+    }
+    </script></head>
+    <body><script>
+            if (!window.localStorage || !window.localStorage.getItem('theme')) {window.isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;} else {
+                window.isDark = (window.localStorage && window.localStorage.getItem('theme')) === 'dark';
+            }
+            window.isDark && document.body.classList.add('dark-theme');
+        </script><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/">PYHOME</a>
+        </div>
+        <div class="menu"><a class="menu-item" href="/posts/" rel="noopener noreffer">文章</a><a class="menu-item" href="/tags/" rel="noopener noreffer">标签</a><a class="menu-item" href="/categories/" rel="noopener noreffer">分类</a><span class="menu-item">|</span>
+            <a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-wrapper">
+        <div class="header-container">
+            <div class="header-title">
+                <a href="/">PYHOME</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="" rel="noopener noreffer">文章</a><a class="menu-item" href="/tags/" title="" rel="noopener noreffer">标签</a><a class="menu-item" href="/categories/" title="" rel="noopener noreffer">分类</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+
+<script>
+    window.desktopHeaderMode = "fixed";
+    window.mobileHeaderMode = "auto";
+</script>
+<main class="main">
+                <div class="container"><article class="page single"><h1 class="single-title animated flipInX">Windows&#43;Hugo&#43;GithubPage搭建简单个人博客</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>xxxx</a>
+</span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i><time datetime=2020-04-17>2020-04-17</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>约 1235 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>预计阅读 3 分钟&nbsp;</div>
+        </div><div class="content" id="content"><h2 id="安装-hugo">安装 hugo</h2>
+<ol>
+<li>二进制安装(推荐：简单、快速)，到 <a href="https://github.com/gohugoio/hugo/releases" target="_blank" rel="noopener noreffer">hugo Releases</a>
+ 下载对应的操作系统版本的 <code>hugo</code> 二进制文件（ <code>hugo</code> 或者 <code>hugo.exe</code> ）；</li>
+<li>创建文件夹。此处举例： <code>F</code> 盘创建 <strong><code>hugo/bin</code></strong> ，将解压后的 <strong><code>hugo.exe</code></strong> 放到 <strong><code>bin</code></strong> 目录下；</li>
+<li>配置系统环境变量。将 <strong><code>F:\hugo\bin</code></strong> 加到 <strong>path</strong> 变量中</li>
+</ol>
+<p>以上设置好后，就可以在 <code>cmd</code> 中查看是否安装成功。执行命令：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ hugo version
+Hugo Static Site Generator v0.69.0-4205844B windows/amd64 BuildDate: 2020-04-10T09:11:37Z
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="生产站点">生产站点</h2>
+<p>进入 <code>F:\hugo</code> 下，打开命令窗口。(可用 <code>cmd</code> ，也可选择下载安装 <a href="https://git-scm.com/downloads" target="_blank" rel="noopener noreffer">Git</a>
+ ，推荐安装 <code>git</code> ，敲命令很方便)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ hugo new site 文件名称 <span class="o">(</span>如blog<span class="o">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>执行后，在 <strong>hugo目录</strong> 下就会生成一个 名叫 <code>blog</code> 的站点文件夹</p>
+<p>进入 <code>blog</code> ，显示以下目录结构：</p>
+<blockquote>
+<p>archetypes　  (存放<code>default.md</code>，头文件格式，每次新建文章默认显示的头部信息在此修改)</p>
+<p>content 　　  (存放博客文章，<code>markdown</code>格式文件)</p>
+<p>data         (存放自定义或者导入的模板)</p>
+<p>layouts      (存放网站的数据模板)</p>
+<p>static       (存放图片、<code>css</code>、<code>js</code>等静态资源)</p>
+<p>themes       (存放主题文件，每个主题都是一个独立的文件夹)</p>
+<p>config.toml  (网站配置文件)</p>
+</blockquote>
+<p>创建第一篇文章，放到 <code>post</code> 目录，方便之后生成聚合页面。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ hugo new post/first.md
+</code></pre></td></tr></table>
+</div>
+</div><p>打开编辑 <code>post/first.md</code> ：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-toml" data-lang="toml"><span class="err">+++</span>
+<span class="nx">date</span><span class="err">:</span> <span class="s2">&#34;2015-10-25T08:36:54-07:00&#34;</span>
+<span class="nx">title</span><span class="err">:</span> <span class="s2">&#34;first&#34;</span>
+ 
+<span class="err">+++</span>
+
+<span class="c">### Hello Hugo</span>
+
+ <span class="mi">1</span><span class="p">.</span> <span class="nx">aaa</span>
+ <span class="mi">1</span><span class="p">.</span> <span class="nx">bbb</span>
+ <span class="mi">1</span><span class="p">.</span> <span class="nx">ccc</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="安装皮肤">安装皮肤</h2>
+<p>到 <a href="https://www.gohugo.org/theme/" target="_blank" rel="noopener noreffer">皮肤列表</a>
+ 挑选一个心仪的皮肤，比如你觉得 <code>Hyde</code> 皮肤不错，找到相关的 <code>GitHub</code> 地址，创建目录 <code>themes</code>，在 <code>themes</code> 目录里把皮肤 <code>git clone</code> 下来：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 创建 themes 目录</span>
+$ <span class="nb">cd</span> themes
+$ git clone https://github.com/spf13/hyde.git
+</code></pre></td></tr></table>
+</div>
+</div><p>此时可回到站点目录下打开 <code>config.toml</code> 配置指定主题。如 <code>theme = &quot;hyde&quot;</code> 没有 <code>theme</code> 参数就自己写上</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-toml" data-lang="toml"><span class="nx">baseURL</span> <span class="p">=</span> <span class="s2">&#34;https://shaopus.github.io/&#34;</span>
+<span class="nx">languageCode</span> <span class="p">=</span> <span class="s2">&#34;en-us&#34;</span>
+<span class="nx">title</span> <span class="p">=</span> <span class="s2">&#34;My New Hugo Site&#34;</span>
+<span class="nx">theme</span> <span class="p">=</span> <span class="s2">&#34;hyde&#34;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="运行hugo">运行hugo</h2>
+<p>在你的<strong>站点根目录</strong>执行 <code>hugo</code> 命令进行调试：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ hugo server
+</code></pre></td></tr></table>
+</div>
+</div><p>浏览器里打开： http://localhost:1313</p>
+<h2 id="部署githubpage">部署GithubPage</h2>
+<p>假设你需要部署在 <code>GitHub Pages</code> 上，首先在<code>GitHub</code>上创建一个<code>Repository</code>，命名为：<code>shaopus.github.io</code> （<code>shaopus</code>替换为你的<code>github</code>用户名）。</p>
+<p>在站点目录<strong><code>config.toml</code></strong>中<strong><code>baseURL</code></strong>要换成自己建立的仓库，如 <code>baseURL =</code> &ldquo;<a href="https://yourname.github.io/%22">https://yourname.github.io/&quot;</a></p>
+<p>进入<strong>站点根目录</strong>下，执行：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ hugo
+</code></pre></td></tr></table>
+</div>
+</div><p>执行后，站点根目录下会生成一个<code>public</code>文件夹，该文件下的内容即 <code>hugo</code> 生成的整个静态网站。每次更新内容后，将 <code>pubilc</code> 目录里所有文件 <code>push </code>到 <code>GitHub</code> 即可。</p>
+<p>首次使用的时候要执行以下命令：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ <span class="nb">cd</span> public
+
+$ git remote add origin https://github.com/yourname/yourname.github.io.git <span class="o">(</span>换成自己的<span class="o">)</span>　　将本地目录链接到远程服务器的代码仓库
+
+$ git add -A
+
+$ git commit -m <span class="s2">&#34;first commit&#34;</span>
+
+$ git push -u origin master
+</code></pre></td></tr></table>
+</div>
+</div><p>以后每次<strong>站点目录</strong>下执行 <code>hugo</code> 命令后，再到 <code>public</code> 下执行推送命令：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ git add -A
+
+$ git commit -m <span class="s2">&#34;修改内容什么的&#34;</span>
+
+$ git push orgin master <span class="o">(</span>此处较易出错，error了就百度吧，问题可能千奇百怪<span class="o">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>之后就可以到 <code>GitHub</code>上看提交到分支的内容，也可访问 <code>YOURNAME.github.io</code> 看页面了。</p>
+<h2 id="总结">总结</h2>
+<p>以上整个环境部署好之后，接下来的常用命令就是以下几个：</p>
+<p><strong>站点目录</strong>下，新建文章，执行：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ hugo new post/文章名.md
+</code></pre></td></tr></table>
+</div>
+</div><p>添加文章内容或修修改改，包括修改主题之类的，在本地都可以实时看到</p>
+<p>修改完成，确定要上传到 <code>GitHub</code> 上后，<strong>站点目录</strong> <code>blog</code> 下执行：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ hugo
+</code></pre></td></tr></table>
+</div>
+</div><p>进行编译，没错误的话修改的内容就顺利同步到 <code>public</code> 下了，然后 <strong><code>cd public</code></strong> 下，执行提交命令：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">$ git add -A
+
+$ git commit -m <span class="s2">&#34;修改了啥&#34;</span>
+
+$ git push -u origin master
+</code></pre></td></tr></table>
+</div>
+</div><p>至此 <strong>OK</strong> ，顺利的话应该是一步到位的。若是遇到问题的话再查资料</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>本文于 2020-04-17 更新</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/use-hugo-to-bulid-blog-in-windows/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://shaopus.github.io/use-hugo-to-bulid-blog-in-windows/" data-title="Windows&#43;Hugo&#43;GithubPage搭建简单个人博客"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://shaopus.github.io/use-hugo-to-bulid-blog-in-windows/"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://shaopus.github.io/use-hugo-to-bulid-blog-in-windows/" data-title="Windows&#43;Hugo&#43;GithubPage搭建简单个人博客" data-ralateuid="xxxx"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://shaopus.github.io/use-hugo-to-bulid-blog-in-windows/" data-title="Windows&#43;Hugo&#43;GithubPage搭建简单个人博客"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section></section>
+        <section>
+            <span><a href="javascript:window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"></div>
+</div>
+<div class="comment"></div>
+    </article></div>
+            </main><footer class="footer">
+    <div class="copyright"><div class="copyright-line">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="external nofollow noopener noreffer"><i class="far fa-heart fa-fw"></i> LoveIt</a>
+        </div>
+
+        <div class="copyright-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">xxxx</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+    </div>
+</footer>
+</div><a href="#" class="dynamic-to-top animated faster" id="dynamic-to-top">
+            <i class="fas fa-chevron-up fa-fw"></i>
+        </a><script>
+        document.addEventListener('DOMContentLoaded', function () {
+            lightGallery(document.getElementById('content'), {
+                selector: '.lightgallery',
+                speed: 400,
+                hideBarsDelay: 2000,
+                thumbnail: true,
+                exThumbImage: 'data-thumbnail',
+                thumbWidth: 80,
+                thumbContHeight: 80,
+            });
+        });
+    </script><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><script src="/lib/smooth-scroll/smooth-scroll.polyfills.min.js"></script><script src="/lib/sharer/sharer.min.js"></script><script src="/lib/lazysizes/lazysizes.min.js"></script><script src="/lib/lightgallery/lightgallery.min.js"></script><script src="/lib/lightgallery/lg-thumbnail.min.js"></script><script src="/lib/lightgallery/lg-zoom.min.js"></script><script src="/js/theme.min.js"></script></body>
+</html>
