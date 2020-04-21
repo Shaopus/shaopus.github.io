@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on PYHOME</title>
-    <link>https://example.com/posts/</link>
-    <description>Recent content in Posts on PYHOME</description>
+    <title>WiFi on PYHOME</title>
+    <link>https://example.com/tags/wifi/</link>
+    <description>Recent content in WiFi on PYHOME</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     <lastBuildDate>Tue, 21 Apr 2020 13:21:43 +0800</lastBuildDate>
     
-	<atom:link href="https://example.com/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://example.com/tags/wifi/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -19,15 +19,6 @@
       
       <guid>https://example.com/esp8266-8285-%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95/</guid>
       <description>启动报错 csum err ets_main.c 解决办法 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 ets Jan 8 2013,rst cause:2, boot mode:(3,6) load 0x40100000, len 25020, room 16 tail 12 chksum 0xef ho 0 tail 12 room 4 load 0x00000000, len 0, room 12 tail 0 chksum 0xef load 0x00000000, len 0, room 4 tail 0 chksum 0xef csum</description>
-    </item>
-    
-    <item>
-      <title>Windows&#43;Hugo&#43;GithubPage搭建简单个人博客</title>
-      <link>https://example.com/use-hugo-to-bulid-blog-in-windows/</link>
-      <pubDate>Fri, 17 Apr 2020 12:52:51 +0800</pubDate>
-      
-      <guid>https://example.com/use-hugo-to-bulid-blog-in-windows/</guid>
-      <description>安装 hugo 二进制安装(推荐：简单、快速)，到 hugo Releases 下载对应的操作系统版本的 hugo 二进制文件（ hugo 或者 hugo.exe ）； 创建文件夹。此处举例： F 盘创建 hugo/bin ，将解压后的 hugo.exe</description>
     </item>
     
   </channel>
