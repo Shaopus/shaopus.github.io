@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>use esp-homekit to esp8266 | PYHOME</title>
+        <meta name="Description" content="esp-homekit 在 ESP8266 的移植"><meta property="og:title" content="use esp-homekit to esp8266" />
+<meta property="og:description" content="esp-homekit 在 ESP8266 的移植" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.com/use-esp-homekit-to-esp8266/" />
+<meta property="article:published_time" content="2020-04-29T12:54:28+08:00" />
+<meta property="article:modified_time" content="2020-04-29T13:08:30+08:00" /><meta property="og:site_name" content="PYHOME" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="use esp-homekit to esp8266"/>
+<meta name="twitter:description" content="esp-homekit 在 ESP8266 的移植"/>
+<meta name="theme-color" content="#ffffff">
+<meta name="msapplication-TileColor" content="#da532c">
+<link rel="canonical" href="https://example.com/use-esp-homekit-to-esp8266/" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="prev" href="https://example.com/esp8266-8285-%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95/" /><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><link rel="stylesheet" href="/css/style.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "use esp-homekit to esp8266",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/example.com\/use-esp-homekit-to-esp8266\/"
+        },"image": {
+                "@type": "ImageObject",
+                "url": "https:\/\/example.com\/cover.png",
+                "width":  800 ,
+                "height":  600 
+            },"genre": "posts","keywords": "WiFi, 记录, esp-homekit","wordcount":  845 ,
+        "url": "https:\/\/example.com\/use-esp-homekit-to-esp8266\/","datePublished": "2020-04-29","dateModified": "2020-04-29","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+                "@type": "Organization",
+                "name": "xxxx",
+                "logo": {
+                "@type": "ImageObject",
+                "url": "https:\/\/example.com\/logo.png",
+                "width":  127 ,
+                "height":  40 
+                }
+            },"author": {
+                "@type": "Person",
+                "name": "ShaoPu"
+            },"description": "esp-homekit 在 ESP8266 的移植"
+    }
+    </script></head>
+    <body><script>
+            if (!window.localStorage || !window.localStorage.getItem('theme')) {window.isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;} else {
+                window.isDark = (window.localStorage && window.localStorage.getItem('theme')) === 'dark';
+            }
+            window.isDark && document.body.classList.add('dark-theme');
+        </script><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/">PYHOME</a>
+        </div>
+        <div class="menu"><a class="menu-item" href="/posts/" rel="noopener noreffer">所有文章</a><a class="menu-item" href="/tags/" rel="noopener noreffer">标签</a><a class="menu-item" href="/categories/" rel="noopener noreffer">分类</a><a class="menu-item" href="/categories/documentation/" rel="noopener noreffer">文档</a><a class="menu-item" href="/about/" rel="noopener noreffer">关于</a><a class="menu-item" href="https://github.com/shaopus" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><span class="menu-item">|</span>
+            <a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-wrapper">
+        <div class="header-container">
+            <div class="header-title">
+                <a href="/">PYHOME</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="" rel="noopener noreffer">所有文章</a><a class="menu-item" href="/tags/" title="" rel="noopener noreffer">标签</a><a class="menu-item" href="/categories/" title="" rel="noopener noreffer">分类</a><a class="menu-item" href="/categories/documentation/" title="" rel="noopener noreffer">文档</a><a class="menu-item" href="/about/" title="" rel="noopener noreffer">关于</a><a class="menu-item" href="https://github.com/shaopus" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+
+<script>
+    window.desktopHeaderMode = "fixed";
+    window.mobileHeaderMode = "auto";
+</script>
+<main class="main">
+                <div class="container"><article class="page single"><h1 class="single-title animated flipInX">use esp-homekit to esp8266</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/Shaopus" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>ShaoPu</a>
+</span>&nbsp;
+                    <span class="post-category">收录于<a href="/categories/esp8266">
+                                <i class="far fa-folder fa-fw"></i>Esp8266
+                            </a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i><time datetime=2020-04-29>2020-04-29</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>约 845 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>预计阅读 2 分钟&nbsp;<span id="/use-esp-homekit-to-esp8266/" class="leancloud_visitors" data-flag-title="use esp-homekit to esp8266">
+                        <i class="far fa-eye fa-fw"></i><span class=leancloud-visitors-count></span>&nbsp;次阅读
+                    </span>&nbsp;</div>
+        </div><div class="toc" id="toc-auto">
+                <h2 class="toc-title">目录</h2>
+                <div class="toc-content" id="toc-content-auto"></div>
+            </div>
+            <div class="toc" id="toc-static">
+                <details>
+                    <summary>
+                        <div class="toc-title">
+                            <span>目录</span>
+                            <span><i class="details icon fas fa-angle-down"></i></span>
+                        </div>
+                    </summary>
+                    <div class="toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#组件">组件</a></li>
+    <li><a href="#步骤">步骤</a></li>
+    <li><a href="#声明">声明</a>
+      <ul>
+        <li>
+          <ul>
+            <li>
+              <ul>
+                <li>
+                  <ul>
+                    <li><a href="#homekit-accessory-protocol-hap-is-apples-proprietary-protocol-that-enables-third-party-accessories-in-the-home-eg-lights-thermostats-and-door-locks-and-apple-products-to-communicate-with-each-other-hap-supports-two-transports-ip-and-bluetooth-le-the-information-provided-in-the-homekit-accessory-protocol-specification-non-commercial-version-describes-how-to-implement-hap-in-an-accessory-that-you-create-for-non-commercial-use-and-that-will-not-be-distributed-or-sold">HomeKit Accessory Protocol (HAP) is Apple’s proprietary protocol that enables third-party accessories in the home (e.g., lights, thermostats and door locks) and Apple products to communicate with each other. HAP supports two transports, IP and Bluetooth LE. The information provided in the HomeKit Accessory Protocol Specification (Non-Commercial Version) describes how to implement HAP in an accessory that you create for non-commercial use and that will not be distributed or sold.</a></li>
+                    <li><a href="#the-homekit-accessory-protocol-specification-non-commercial-version-can-be-downloaded-from-the-homekit-apple-developer-pagehttpsdeveloperapplecomhomekit">The HomeKit Accessory Protocol Specification (Non-Commercial Version) can be downloaded from the <a href="https://developer.apple.com/homekit/">HomeKit Apple Developer page.</a></a></li>
+                    <li><a href="#copyright--2019-apple-inc-all-rights-reserved">Copyright © 2019 Apple Inc. All rights reserved.</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#components">Components</a></li>
+    <li><a href="#steps">Steps</a></li>
+    <li><a href="#statement">Statement:</a>
+      <ul>
+        <li>
+          <ul>
+            <li>
+              <ul>
+                <li>
+                  <ul>
+                    <li><a href="#homekit-accessory-protocol-hap-is-apples-proprietary-protocol-that-enables-third-party-accessories-in-the-home-eg-lights-thermostats-and-door-locks-and-apple-products-to-communicate-with-each-other-hap-supports-two-transports-ip-and-bluetooth-le-the-information-provided-in-the-homekit-accessory-protocol-specification-non-commercial-version-describes-how-to-implement-hap-in-an-accessory-that-you-create-for-non-commercial-use-and-that-will-not-be-distributed-or-sold-1">HomeKit Accessory Protocol (HAP) is Apple’s proprietary protocol that enables third-party accessories in the home (e.g., lights, thermostats and door locks) and Apple products to communicate with each other. HAP supports two transports, IP and Bluetooth LE. The information provided in the HomeKit Accessory Protocol Specification (Non-Commercial Version) describes how to implement HAP in an accessory that you create for non-commercial use and that will not be distributed or sold.</a></li>
+                    <li><a href="#the-homekit-accessory-protocol-specification-non-commercial-version-can-be-downloaded-from-the-homekit-apple-developer-pagehttpsdeveloperapplecomhomekit-1">The HomeKit Accessory Protocol Specification (Non-Commercial Version) can be downloaded from the <a href="https://developer.apple.com/homekit/">HomeKit Apple Developer page.</a></a></li>
+                    <li><a href="#copyright--2019-apple-inc-all-rights-reserved-1">Copyright © 2019 Apple Inc. All rights reserved.</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+                </details>
+            </div><div class="content" id="content"><details>
+<summary><strong>中文版本</strong></summary>
+<div>
+<p><a href="https://github.com/maximkulkin/esp-homekit" target="_blank" rel="noopener noreffer">esp-homekit</a>
+ 是 <code>Apple HomeKit</code> 配件服务器库，可以在 <code>esp8266</code> 和 <code>esp32</code> 上使用，以下是 <a href="https://github.com/maximkulkin/esp-homekit" target="_blank" rel="noopener noreffer">esp-homekit</a>
+  是基于 <a href="https://github.com/espressif/ESP8266_RTOS_SDK" target="_blank" rel="noopener noreffer">ESP8266_RTOS_SDK</a>
+ 在 <code>esp8266</code> 上的移植步骤。</p>
+<h2 id="组件">组件</h2>
+<ul>
+<li><a href="https://github.com/maximkulkin/esp-homekit" target="_blank" rel="noopener noreffer">esp-homekit</a>
+</li>
+<li><a href="https://github.com/maximkulkin/esp-wolfssl" target="_blank" rel="noopener noreffer">esp-wolfssl</a>
+</li>
+<li><a href="https://github.com/maximkulkin/esp-http-parser" target="_blank" rel="noopener noreffer">esp-http-parser</a>
+</li>
+</ul>
+<h2 id="步骤">步骤</h2>
+<ul>
+<li>
+<p>下载这些库到 <code>compnents</code>，并重命名文件夹</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">1. git clone --recursive https://github.com/maximkulkin/esp-homekit homekit
+2. git clone --recursive https://github.com/maximkulkin/esp-http-parser http-parser
+3. git clone --recursive https://github.com/maximkulkin/esp-wolfssl wolfssl
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>修改<code>makefile</code>文件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nv">PROJECT_NAME</span> <span class="o">=</span> esp8266-homekit-led
+  
+<span class="nv">CFLAGS</span> <span class="o">+=</span> -DHOMEKIT_SHORT_APPLE_UUIDS
+  
+include <span class="k">$(</span>IDF_PATH<span class="k">)</span>/make/project.mk
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>修改 <code>main</code> 文件下的 <code>component.mk</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">COMPONENT_DEPENDS :<span class="o">=</span> homekit
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>把项目的 <code>wifi.h.sample</code> 移到 <code>main</code> 文件夹下，然后修改为 <code>wifi.h</code>，最后写入自己的 <code>WiFi</code> 的 <code>SSID</code> 和 密码</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-c" data-lang="c"><span class="cp">#define WIFI_SSID &#34;mywifi&#34;
+</span><span class="cp">#define WIFI_PASSWORD &#34;mypassword&#34;
+</span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>修改<code>led demo</code>，详细见目录下的 <code>led.c</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-c" data-lang="c"><span class="p">...</span>
+  
+<span class="cp">#include</span> <span class="cpf">&lt;homekit/homekit.h&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;homekit/characteristics.h&gt;</span><span class="cp">
+</span><span class="cp"></span><span class="p">...</span>
+      
+<span class="n">homekit_accessory_t</span> <span class="o">*</span><span class="n">accessories</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">HOMEKIT_ACCESSORY</span><span class="p">(.</span><span class="n">id</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="p">.</span><span class="n">category</span><span class="o">=</span><span class="n">homekit_accessory_category_lightbulb</span><span class="p">,</span> <span class="p">.</span><span class="n">services</span><span class="o">=</span><span class="p">(</span><span class="n">homekit_service_t</span><span class="o">*</span><span class="p">[]){</span>
+        <span class="n">HOMEKIT_SERVICE</span><span class="p">(</span><span class="n">ACCESSORY_INFORMATION</span><span class="p">,</span> <span class="p">.</span><span class="n">characteristics</span><span class="o">=</span><span class="p">(</span><span class="n">homekit_characteristic_t</span><span class="o">*</span><span class="p">[]){</span>
+            <span class="n">HOMEKIT_CHARACTERISTIC</span><span class="p">(</span><span class="n">NAME</span><span class="p">,</span> <span class="s">&#34;Sample LED&#34;</span><span class="p">),</span>
+            <span class="n">HOMEKIT_CHARACTERISTIC</span><span class="p">(</span><span class="n">MANUFACTURER</span><span class="p">,</span> <span class="s">&#34;PYHOME&#34;</span><span class="p">),</span>
+            <span class="n">HOMEKIT_CHARACTERISTIC</span><span class="p">(</span><span class="n">SERIAL_NUMBER</span><span class="p">,</span> <span class="s">&#34;025A2BABF19D&#34;</span><span class="p">),</span>
+            <span class="n">HOMEKIT_CHARACTERISTIC</span><span class="p">(</span><span class="n">MODEL</span><span class="p">,</span> <span class="s">&#34;MyLED&#34;</span><span class="p">),</span>
+            <span class="n">HOMEKIT_CHARACTERISTIC</span><span class="p">(</span><span class="n">FIRMWARE_REVISION</span><span class="p">,</span> <span class="s">&#34;0.1&#34;</span><span class="p">),</span>
+            <span class="n">HOMEKIT_CHARACTERISTIC</span><span class="p">(</span><span class="n">IDENTIFY</span><span class="p">,</span> <span class="n">led_identify</span><span class="p">),</span>
+            <span class="nb">NULL</span>
+        <span class="p">}),</span>
+        <span class="n">HOMEKIT_SERVICE</span><span class="p">(</span><span class="n">LIGHTBULB</span><span class="p">,</span> <span class="p">.</span><span class="n">primary</span><span class="o">=</span><span class="nb">true</span><span class="p">,</span> <span class="p">.</span><span class="n">characteristics</span><span class="o">=</span><span class="p">(</span><span class="n">homekit_characteristic_t</span><span class="o">*</span><span class="p">[]){</span>
+            <span class="n">HOMEKIT_CHARACTERISTIC</span><span class="p">(</span><span class="n">NAME</span><span class="p">,</span> <span class="s">&#34;Sample LED&#34;</span><span class="p">),</span>
+            <span class="n">HOMEKIT_CHARACTERISTIC</span><span class="p">(</span>
+                <span class="n">ON</span><span class="p">,</span> <span class="nb">false</span><span class="p">,</span>
+                <span class="p">.</span><span class="n">getter</span><span class="o">=</span><span class="n">led_on_get</span><span class="p">,</span>
+                <span class="p">.</span><span class="n">setter</span><span class="o">=</span><span class="n">led_on_set</span>
+            <span class="p">),</span>
+            <span class="nb">NULL</span>
+        <span class="p">}),</span>
+        <span class="nb">NULL</span>
+    <span class="p">}),</span>
+    <span class="nb">NULL</span>
+<span class="p">};</span>
+  
+<span class="n">homekit_server_config_t</span> <span class="n">config</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="p">.</span><span class="n">accessories</span> <span class="o">=</span> <span class="n">accessories</span><span class="p">,</span>
+    <span class="p">.</span><span class="n">password</span> <span class="o">=</span> <span class="s">&#34;111-11-111&#34;</span><span class="p">,</span>
+    <span class="p">.</span><span class="n">setupId</span><span class="o">=</span><span class="s">&#34;1SP0&#34;</span><span class="p">,</span>
+<span class="p">};</span>
+  
+<span class="kt">void</span> <span class="nf">on_wifi_ready</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">homekit_server_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">config</span><span class="p">);</span>
+<span class="p">}</span>
+  
+<span class="p">...</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>注意，需要在 <code>menuconfig</code> 中使能 <code>MDNS</code> 和 <code>IPV6</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># mDNs</span>
+<span class="nv">CONFIG_ENABLE_MDNS</span><span class="o">=</span>y
+  
+<span class="c1"># IPV6</span>
+<span class="nv">CONFIG_LWIP_IPV6</span><span class="o">=</span>y
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h2 id="声明">声明</h2>
+<p>该项目参考 <a href="https://github.com/Shaopus/esp32-homekit-led" target="_blank" rel="noopener noreffer">esp32-homekit-led</a>
+ 中的 <code>makefile</code> 和 项目目录</p>
+<p>Although already forbidden by the sources and subsequent licensing, it is not allowed to use or distribute this software for a commercial purpose.</p>
+<img src="https://freepngimg.com/thumb/apple_logo/25366-7-apple-logo-file.png" width="20"/> 
+<h6 id="homekit-accessory-protocol-hap-is-apples-proprietary-protocol-that-enables-third-party-accessories-in-the-home-eg-lights-thermostats-and-door-locks-and-apple-products-to-communicate-with-each-other-hap-supports-two-transports-ip-and-bluetooth-le-the-information-provided-in-the-homekit-accessory-protocol-specification-non-commercial-version-describes-how-to-implement-hap-in-an-accessory-that-you-create-for-non-commercial-use-and-that-will-not-be-distributed-or-sold">HomeKit Accessory Protocol (HAP) is Apple’s proprietary protocol that enables third-party accessories in the home (e.g., lights, thermostats and door locks) and Apple products to communicate with each other. HAP supports two transports, IP and Bluetooth LE. The information provided in the HomeKit Accessory Protocol Specification (Non-Commercial Version) describes how to implement HAP in an accessory that you create for non-commercial use and that will not be distributed or sold.</h6>
+<h6 id="the-homekit-accessory-protocol-specification-non-commercial-version-can-be-downloaded-from-the-homekit-apple-developer-pagehttpsdeveloperapplecomhomekit">The HomeKit Accessory Protocol Specification (Non-Commercial Version) can be downloaded from the <a href="https://developer.apple.com/homekit/" target="_blank" rel="noopener noreffer">HomeKit Apple Developer page.</a>
+</h6>
+<h6 id="copyright--2019-apple-inc-all-rights-reserved">Copyright © 2019 Apple Inc. All rights reserved.</h6>
+</div>
+</details>
+<p><a href="https://github.com/maximkulkin/esp-homekit" target="_blank" rel="noopener noreffer">esp-homekit</a>
+ is <code>Apple HomeKit</code> accessory server library, which can be used on esp8266 and esp32, the following is <a href="https://github.com/maximkulkin/esp-homekit" target="_blank" rel="noopener noreffer">esp-homekit</a>
+ based on  <a href="https://github.com/espressif/ESP8266_RTOS_SDK" target="_blank" rel="noopener noreffer">ESP8266_RTOS_SDK</a>
+ migration steps on esp8266.</p>
+<h2 id="components">Components</h2>
+<ul>
+<li><a href="https://github.com/maximkulkin/esp-homekit" target="_blank" rel="noopener noreffer">esp-homekit</a>
+</li>
+<li><a href="https://github.com/maximkulkin/esp-wolfssl" target="_blank" rel="noopener noreffer">esp-wolfssl</a>
+</li>
+<li><a href="https://github.com/maximkulkin/esp-http-parser" target="_blank" rel="noopener noreffer">esp-http-parser</a>
+</li>
+</ul>
+<h2 id="steps">Steps</h2>
+<ul>
+<li>
+<p>download these libraries to components and rename folder</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">1. git clone --recursive https://github.com/maximkulkin/esp-homekit homekit
+2. git clone --recursive https://github.com/maximkulkin/esp-http-parser http-parser
+3. git clone --recursive https://github.com/maximkulkin/esp-wolfssl wolfssl
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>modify the makefile</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nv">PROJECT_NAME</span> <span class="o">=</span> esp8266-homekit-led
+  
+<span class="nv">CFLAGS</span> <span class="o">+=</span> -DHOMEKIT_SHORT_APPLE_UUIDS
+  
+include <span class="k">$(</span>IDF_PATH<span class="k">)</span>/make/project.mk
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>modify the <code>component.mk</code> under main</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">COMPONENT_DEPENDS :<span class="o">=</span> homekit
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>move the project&rsquo;s <code>wifi.h.sample</code> to main folder, then modify it to <code>wifi.h</code>, finally write your WiFi SSID and password</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-c" data-lang="c"><span class="cp">#define WIFI_SSID &#34;mywifi&#34;
+</span><span class="cp">#define WIFI_PASSWORD &#34;mypassword&#34;
+</span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>modify led demo, see the <code>led.c</code> for details</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-c" data-lang="c"><span class="p">...</span>
+  
+<span class="cp">#include</span> <span class="cpf">&lt;homekit/homekit.h&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;homekit/characteristics.h&gt;</span><span class="cp">
+</span><span class="cp"></span><span class="p">...</span>
+      
+<span class="n">homekit_accessory_t</span> <span class="o">*</span><span class="n">accessories</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">HOMEKIT_ACCESSORY</span><span class="p">(.</span><span class="n">id</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="p">.</span><span class="n">category</span><span class="o">=</span><span class="n">homekit_accessory_category_lightbulb</span><span class="p">,</span> <span class="p">.</span><span class="n">services</span><span class="o">=</span><span class="p">(</span><span class="n">homekit_service_t</span><span class="o">*</span><span class="p">[]){</span>
+        <span class="n">HOMEKIT_SERVICE</span><span class="p">(</span><span class="n">ACCESSORY_INFORMATION</span><span class="p">,</span> <span class="p">.</span><span class="n">characteristics</span><span class="o">=</span><span class="p">(</span><span class="n">homekit_characteristic_t</span><span class="o">*</span><span class="p">[]){</span>
+            <span class="n">HOMEKIT_CHARACTERISTIC</span><span class="p">(</span><span class="n">NAME</span><span class="p">,</span> <span class="s">&#34;Sample LED&#34;</span><span class="p">),</span>
+            <span class="n">HOMEKIT_CHARACTERISTIC</span><span class="p">(</span><span class="n">MANUFACTURER</span><span class="p">,</span> <span class="s">&#34;PYHOME&#34;</span><span class="p">),</span>
+            <span class="n">HOMEKIT_CHARACTERISTIC</span><span class="p">(</span><span class="n">SERIAL_NUMBER</span><span class="p">,</span> <span class="s">&#34;025A2BABF19D&#34;</span><span class="p">),</span>
+            <span class="n">HOMEKIT_CHARACTERISTIC</span><span class="p">(</span><span class="n">MODEL</span><span class="p">,</span> <span class="s">&#34;MyLED&#34;</span><span class="p">),</span>
+            <span class="n">HOMEKIT_CHARACTERISTIC</span><span class="p">(</span><span class="n">FIRMWARE_REVISION</span><span class="p">,</span> <span class="s">&#34;0.1&#34;</span><span class="p">),</span>
+            <span class="n">HOMEKIT_CHARACTERISTIC</span><span class="p">(</span><span class="n">IDENTIFY</span><span class="p">,</span> <span class="n">led_identify</span><span class="p">),</span>
+            <span class="nb">NULL</span>
+        <span class="p">}),</span>
+        <span class="n">HOMEKIT_SERVICE</span><span class="p">(</span><span class="n">LIGHTBULB</span><span class="p">,</span> <span class="p">.</span><span class="n">primary</span><span class="o">=</span><span class="nb">true</span><span class="p">,</span> <span class="p">.</span><span class="n">characteristics</span><span class="o">=</span><span class="p">(</span><span class="n">homekit_characteristic_t</span><span class="o">*</span><span class="p">[]){</span>
+            <span class="n">HOMEKIT_CHARACTERISTIC</span><span class="p">(</span><span class="n">NAME</span><span class="p">,</span> <span class="s">&#34;Sample LED&#34;</span><span class="p">),</span>
+            <span class="n">HOMEKIT_CHARACTERISTIC</span><span class="p">(</span>
+                <span class="n">ON</span><span class="p">,</span> <span class="nb">false</span><span class="p">,</span>
+                <span class="p">.</span><span class="n">getter</span><span class="o">=</span><span class="n">led_on_get</span><span class="p">,</span>
+                <span class="p">.</span><span class="n">setter</span><span class="o">=</span><span class="n">led_on_set</span>
+            <span class="p">),</span>
+            <span class="nb">NULL</span>
+        <span class="p">}),</span>
+        <span class="nb">NULL</span>
+    <span class="p">}),</span>
+    <span class="nb">NULL</span>
+<span class="p">};</span>
+  
+<span class="n">homekit_server_config_t</span> <span class="n">config</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="p">.</span><span class="n">accessories</span> <span class="o">=</span> <span class="n">accessories</span><span class="p">,</span>
+    <span class="p">.</span><span class="n">password</span> <span class="o">=</span> <span class="s">&#34;111-11-111&#34;</span><span class="p">,</span>
+    <span class="p">.</span><span class="n">setupId</span><span class="o">=</span><span class="s">&#34;1SP0&#34;</span><span class="p">,</span>
+<span class="p">};</span>
+  
+<span class="kt">void</span> <span class="nf">on_wifi_ready</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">homekit_server_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">config</span><span class="p">);</span>
+<span class="p">}</span>
+  
+<span class="p">...</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>note! you need to enable MDNS and IPV6 in menuconfig</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="c1"># mDNs</span>
+<span class="nv">CONFIG_ENABLE_MDNS</span><span class="o">=</span>y
+  
+<span class="c1"># IPV6</span>
+<span class="nv">CONFIG_LWIP_IPV6</span><span class="o">=</span>y
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h2 id="statement">Statement:</h2>
+<p>This project refers to the makefile and project directory from <a href="https://github.com/Shaopus/esp32-homekit-led" target="_blank" rel="noopener noreffer">esp32-homekit-led</a>
+</p>
+<p>Although already forbidden by the sources and subsequent licensing, it is not allowed to use or distribute this software for a commercial purpose.</p>
+<img src="https://freepngimg.com/thumb/apple_logo/25366-7-apple-logo-file.png" width="20"/> 
+<h6 id="homekit-accessory-protocol-hap-is-apples-proprietary-protocol-that-enables-third-party-accessories-in-the-home-eg-lights-thermostats-and-door-locks-and-apple-products-to-communicate-with-each-other-hap-supports-two-transports-ip-and-bluetooth-le-the-information-provided-in-the-homekit-accessory-protocol-specification-non-commercial-version-describes-how-to-implement-hap-in-an-accessory-that-you-create-for-non-commercial-use-and-that-will-not-be-distributed-or-sold-1">HomeKit Accessory Protocol (HAP) is Apple’s proprietary protocol that enables third-party accessories in the home (e.g., lights, thermostats and door locks) and Apple products to communicate with each other. HAP supports two transports, IP and Bluetooth LE. The information provided in the HomeKit Accessory Protocol Specification (Non-Commercial Version) describes how to implement HAP in an accessory that you create for non-commercial use and that will not be distributed or sold.</h6>
+<h6 id="the-homekit-accessory-protocol-specification-non-commercial-version-can-be-downloaded-from-the-homekit-apple-developer-pagehttpsdeveloperapplecomhomekit-1">The HomeKit Accessory Protocol Specification (Non-Commercial Version) can be downloaded from the <a href="https://developer.apple.com/homekit/" target="_blank" rel="noopener noreffer">HomeKit Apple Developer page.</a>
+</h6>
+<h6 id="copyright--2019-apple-inc-all-rights-reserved-1">Copyright © 2019 Apple Inc. All rights reserved.</h6>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>本文于 2020-04-29 更新&nbsp;<a class="git-hash" href="https://github.com/dillonzq/LoveIt/commit/4f22ee699125ada1e0b45887ec7ed6a7990df313" target="_blank" title="commit by ShaoPu(shaopus@163.com) 4f22ee699125ada1e0b45887ec7ed6a7990df313: add use esp-homekit to esp8266">
+                            <i class="fas fa-hashtag fa-fw"></i>4f22ee6</a></span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/use-esp-homekit-to-esp8266/index.md" target="_blank">阅读原始文档</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://example.com/use-esp-homekit-to-esp8266/" data-title="use esp-homekit to esp8266" data-hashtags="WiFi,记录,esp-homekit"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://example.com/use-esp-homekit-to-esp8266/" data-hashtag="WiFi"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://example.com/use-esp-homekit-to-esp8266/" data-title="use esp-homekit to esp8266" data-ralateuid="shaopus"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 人人" data-sharer="renren" data-url="https://example.com/use-esp-homekit-to-esp8266/"><i class="fab fa-renren fa-fw"></i></a><a href="javascript:void(0);" title="分享到 百度" data-sharer="baidu" data-url="https://example.com/use-esp-homekit-to-esp8266/" data-title="use esp-homekit to esp8266"><i class="loveit it-baidu-fill"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://example.com/use-esp-homekit-to-esp8266/" data-title="use esp-homekit to esp8266"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/wifi">WiFi</a>,&nbsp;<a href="/tags/%E8%AE%B0%E5%BD%95">记录</a>,&nbsp;<a href="/tags/esp-homekit">esp-homekit</a></section>
+        <section>
+            <span><a href="javascript:window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/esp8266-8285-%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95/" class="prev" rel="prev" title="ESP8266/8285 开发记录"><i class="fas fa-angle-left fa-fw"></i>ESP8266/8285 开发记录</a></div>
+</div>
+<div class="comment"><div id="valine"></div><script>
+            document.addEventListener("DOMContentLoaded", function(event) {
+                new Valine({
+                    el: '#valine',
+                    appId: 'QGzwQXOqs5JOhN4RGPOkR2mR-MdYXbMMI',
+                    appKey: 'WBmoGyJtbqUswvfLh6L8iEBr',placeholder: '你的评论 ...',verify: true,avatar: 'mp',pageSize: 10,lang: 'zh-cn',visitor: true,recordIP: true,});
+            });
+        </script>
+        <noscript>
+            Please enable JavaScript to view the <a href="https://valine.js.org/">comments powered by Valine.</a>
+        </noscript></div>
+    </article></div>
+            </main><footer class="footer">
+    <div class="copyright"><div class="copyright-line">由 <a href="https://gohugo.io/" target="_blank" rel="external nofollow noopener noreffer">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="external nofollow noopener noreffer"><i class="far fa-heart fa-fw"></i> LoveIt</a>
+        </div>
+
+        <div class="copyright-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">ShaoPu</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+    </div>
+</footer>
+</div><a href="#" class="dynamic-to-top animated faster" id="dynamic-to-top">
+            <i class="fas fa-chevron-up fa-fw"></i>
+        </a><script>
+        document.addEventListener('DOMContentLoaded', function () {
+            lightGallery(document.getElementById('content'), {
+                selector: '.lightgallery',
+                speed: 400,
+                hideBarsDelay: 2000,
+                thumbnail: true,
+                exThumbImage: 'data-thumbnail',
+                thumbWidth: 80,
+                thumbContHeight: 80,
+            });
+        });
+    </script><script>
+        document.addEventListener('DOMContentLoaded', function () {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    { left: '$$', right: '$$', display: true },
+                    { left: '\\[', right: '\\]', display: true },{ left: '$', right: '$', display: false },
+                    { left: '\\(', right: '\\)', display: false },],
+                strict: false,
+            });
+        });
+    </script><link rel="stylesheet" href="/lib/valine/valine.css"><link rel="stylesheet" href="/lib/iconfont/iconfont.min.css"><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><script src="/lib/valine/Valine.min.js"></script><script src="/lib/smooth-scroll/smooth-scroll.polyfills.min.js"></script><script src="/lib/sharer/sharer.min.js"></script><script src="/lib/lazysizes/lazysizes.min.js"></script><script src="/lib/lightgallery/lightgallery.min.js"></script><script src="/lib/lightgallery/lg-thumbnail.min.js"></script><script src="/lib/lightgallery/lg-zoom.min.js"></script><script src="/lib/katex/katex.min.js"></script><script src="/lib/katex/auto-render.min.js"></script><script src="/lib/katex/copy-tex.min.js"></script><script src="/lib/katex/mhchem.min.js"></script><script src="/js/theme.min.js"></script></body>
+</html>

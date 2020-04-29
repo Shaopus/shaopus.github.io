@@ -6,15 +6,15 @@
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
         <title>Windows&#43;Hugo&#43;GithubPage搭建简单个人博客 | PYHOME</title>
-        <meta name="Description" content="关于 LoveIt 主题"><meta property="og:title" content="Windows&#43;Hugo&#43;GithubPage搭建简单个人博客" />
-<meta property="og:description" content="安装 hugo 二进制安装(推荐：简单、快速)，到 hugo Releases 下载对应的操作系统版本的 hugo 二进制文件（ hugo 或者 hugo.exe ）； 创建文件夹。此处举例： F 盘创建 hugo/bin ，将解压后的 hugo.exe" />
+        <meta name="Description" content="搭建个人博客"><meta property="og:title" content="Windows&#43;Hugo&#43;GithubPage搭建简单个人博客" />
+<meta property="og:description" content="搭建个人博客" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://example.com/use-hugo-to-bulid-blog-in-windows/" />
 <meta property="article:published_time" content="2020-04-17T12:52:51+08:00" />
-<meta property="article:modified_time" content="2020-04-21T09:35:18+08:00" /><meta property="og:site_name" content="PYHOME" />
+<meta property="article:modified_time" content="2020-04-29T13:08:30+08:00" /><meta property="og:site_name" content="PYHOME" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Windows&#43;Hugo&#43;GithubPage搭建简单个人博客"/>
-<meta name="twitter:description" content="安装 hugo 二进制安装(推荐：简单、快速)，到 hugo Releases 下载对应的操作系统版本的 hugo 二进制文件（ hugo 或者 hugo.exe ）； 创建文件夹。此处举例： F 盘创建 hugo/bin ，将解压后的 hugo.exe"/>
+<meta name="twitter:description" content="搭建个人博客"/>
 <meta name="theme-color" content="#ffffff">
 <meta name="msapplication-TileColor" content="#da532c">
 <link rel="canonical" href="https://example.com/use-hugo-to-bulid-blog-in-windows/" />
@@ -37,8 +37,8 @@
                 "url": "https:\/\/example.com\/cover.png",
                 "width":  800 ,
                 "height":  600 
-            },"genre": "posts","wordcount":  1235 ,
-        "url": "https:\/\/example.com\/use-hugo-to-bulid-blog-in-windows\/","datePublished": "2020-04-17","dateModified": "2020-04-21","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            },"genre": "posts","keywords": "记录","wordcount":  1235 ,
+        "url": "https:\/\/example.com\/use-hugo-to-bulid-blog-in-windows\/","datePublished": "2020-04-17","dateModified": "2020-04-29","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
                 "@type": "Organization",
                 "name": "xxxx",
                 "logo": {
@@ -50,7 +50,7 @@
             },"author": {
                 "@type": "Person",
                 "name": "ShaoPu"
-            },"description": ""
+            },"description": "搭建个人博客"
     }
     </script></head>
     <body><script>
@@ -90,14 +90,40 @@
 </script>
 <main class="main">
                 <div class="container"><article class="page single"><h1 class="single-title animated flipInX">Windows&#43;Hugo&#43;GithubPage搭建简单个人博客</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>ShaoPu</a>
-</span></div>
+            <div class="post-meta-line"><span class="post-author"><a href="https://github.com/Shaopus" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>ShaoPu</a>
+</span>&nbsp;
+                    <span class="post-category">收录于<a href="/categories/blog">
+                                <i class="far fa-folder fa-fw"></i>Blog
+                            </a></span></div>
             <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i><time datetime=2020-04-17>2020-04-17</time>&nbsp;
                 <i class="fas fa-pencil-alt fa-fw"></i>约 1235 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>预计阅读 3 分钟&nbsp;<span id="/use-hugo-to-bulid-blog-in-windows/" class="leancloud_visitors" data-flag-title="Windows&#43;Hugo&#43;GithubPage搭建简单个人博客">
                         <i class="far fa-eye fa-fw"></i><span class=leancloud-visitors-count></span>&nbsp;次阅读
                     </span>&nbsp;</div>
-        </div><div class="content" id="content"><h2 id="安装-hugo">安装 hugo</h2>
+        </div><div class="toc" id="toc-auto">
+                <h2 class="toc-title">目录</h2>
+                <div class="toc-content" id="toc-content-auto"></div>
+            </div>
+            <div class="toc" id="toc-static">
+                <details>
+                    <summary>
+                        <div class="toc-title">
+                            <span>目录</span>
+                            <span><i class="details icon fas fa-angle-down"></i></span>
+                        </div>
+                    </summary>
+                    <div class="toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#安装-hugo">安装 hugo</a></li>
+    <li><a href="#生产站点">生产站点</a></li>
+    <li><a href="#安装皮肤">安装皮肤</a></li>
+    <li><a href="#运行hugo">运行hugo</a></li>
+    <li><a href="#部署githubpage">部署GithubPage</a></li>
+    <li><a href="#总结">总结</a></li>
+  </ul>
+</nav></div>
+                </details>
+            </div><div class="content" id="content"><h2 id="安装-hugo">安装 hugo</h2>
 <ol>
 <li>二进制安装(推荐：简单、快速)，到 <a href="https://github.com/gohugoio/hugo/releases" target="_blank" rel="noopener noreffer">hugo Releases</a>
  下载对应的操作系统版本的 <code>hugo</code> 二进制文件（ <code>hugo</code> 或者 <code>hugo.exe</code> ）；</li>
@@ -315,8 +341,8 @@ $ git push -u origin master
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>本文于 2020-04-21 更新&nbsp;<a class="git-hash" href="https://github.com/dillonzq/LoveIt/commit/fe60d6bf845a8fbe8e0dbf1a8e852c310e33c612" target="_blank" title="commit by ShaoPu(shaopus@163.com) fe60d6bf845a8fbe8e0dbf1a8e852c310e33c612: first commit">
-                            <i class="fas fa-hashtag fa-fw"></i>fe60d6b</a></span>
+                <span>本文于 2020-04-29 更新&nbsp;<a class="git-hash" href="https://github.com/dillonzq/LoveIt/commit/4f22ee699125ada1e0b45887ec7ed6a7990df313" target="_blank" title="commit by ShaoPu(shaopus@163.com) 4f22ee699125ada1e0b45887ec7ed6a7990df313: add use esp-homekit to esp8266">
+                            <i class="fas fa-hashtag fa-fw"></i>4f22ee6</a></span>
             </div>
             <div class="post-info-license"></div>
         </div>
@@ -325,13 +351,13 @@ $ git push -u origin master
                             <a class="link-to-markdown" href="/use-hugo-to-bulid-blog-in-windows/index.md" target="_blank">阅读原始文档</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://example.com/use-hugo-to-bulid-blog-in-windows/" data-title="Windows&#43;Hugo&#43;GithubPage搭建简单个人博客"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://example.com/use-hugo-to-bulid-blog-in-windows/"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://example.com/use-hugo-to-bulid-blog-in-windows/" data-title="Windows&#43;Hugo&#43;GithubPage搭建简单个人博客" data-ralateuid="shaopus"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 人人" data-sharer="renren" data-url="https://example.com/use-hugo-to-bulid-blog-in-windows/"><i class="fab fa-renren fa-fw"></i></a><a href="javascript:void(0);" title="分享到 百度" data-sharer="baidu" data-url="https://example.com/use-hugo-to-bulid-blog-in-windows/" data-title="Windows&#43;Hugo&#43;GithubPage搭建简单个人博客"><i class="loveit it-baidu-fill"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://example.com/use-hugo-to-bulid-blog-in-windows/" data-title="Windows&#43;Hugo&#43;GithubPage搭建简单个人博客"><i class="fab fa-evernote fa-fw"></i></a></span>
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="https://example.com/use-hugo-to-bulid-blog-in-windows/" data-title="Windows&#43;Hugo&#43;GithubPage搭建简单个人博客" data-hashtags="记录"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="https://example.com/use-hugo-to-bulid-blog-in-windows/" data-hashtag="记录"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="https://example.com/use-hugo-to-bulid-blog-in-windows/" data-title="Windows&#43;Hugo&#43;GithubPage搭建简单个人博客" data-ralateuid="shaopus"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="分享到 人人" data-sharer="renren" data-url="https://example.com/use-hugo-to-bulid-blog-in-windows/"><i class="fab fa-renren fa-fw"></i></a><a href="javascript:void(0);" title="分享到 百度" data-sharer="baidu" data-url="https://example.com/use-hugo-to-bulid-blog-in-windows/" data-title="Windows&#43;Hugo&#43;GithubPage搭建简单个人博客"><i class="loveit it-baidu-fill"></i></a><a href="javascript:void(0);" title="分享到 Evernote" data-sharer="evernote" data-url="https://example.com/use-hugo-to-bulid-blog-in-windows/" data-title="Windows&#43;Hugo&#43;GithubPage搭建简单个人博客"><i class="fab fa-evernote fa-fw"></i></a></span>
             </div>
         </div>
     </div>
 
     <div class="post-info-more">
-        <section></section>
+        <section><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/%E8%AE%B0%E5%BD%95">记录</a></section>
         <section>
             <span><a href="javascript:window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
         </section>
@@ -373,5 +399,15 @@ $ git push -u origin master
                 thumbContHeight: 80,
             });
         });
-    </script><link rel="stylesheet" href="/lib/valine/valine.css"><link rel="stylesheet" href="/lib/iconfont/iconfont.min.css"><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><script src="/lib/valine/Valine.min.js"></script><script src="/lib/smooth-scroll/smooth-scroll.polyfills.min.js"></script><script src="/lib/sharer/sharer.min.js"></script><script src="/lib/lazysizes/lazysizes.min.js"></script><script src="/lib/lightgallery/lightgallery.min.js"></script><script src="/lib/lightgallery/lg-thumbnail.min.js"></script><script src="/lib/lightgallery/lg-zoom.min.js"></script><script src="/js/theme.min.js"></script></body>
+    </script><script>
+        document.addEventListener('DOMContentLoaded', function () {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    { left: '$$', right: '$$', display: true },
+                    { left: '\\[', right: '\\]', display: true },{ left: '$', right: '$', display: false },
+                    { left: '\\(', right: '\\)', display: false },],
+                strict: false,
+            });
+        });
+    </script><link rel="stylesheet" href="/lib/valine/valine.css"><link rel="stylesheet" href="/lib/iconfont/iconfont.min.css"><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><script src="/lib/valine/Valine.min.js"></script><script src="/lib/smooth-scroll/smooth-scroll.polyfills.min.js"></script><script src="/lib/sharer/sharer.min.js"></script><script src="/lib/lazysizes/lazysizes.min.js"></script><script src="/lib/lightgallery/lightgallery.min.js"></script><script src="/lib/lightgallery/lg-thumbnail.min.js"></script><script src="/lib/lightgallery/lg-zoom.min.js"></script><script src="/lib/katex/katex.min.js"></script><script src="/lib/katex/auto-render.min.js"></script><script src="/lib/katex/copy-tex.min.js"></script><script src="/lib/katex/mhchem.min.js"></script><script src="/js/theme.min.js"></script></body>
 </html>

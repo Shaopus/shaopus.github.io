@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>WiFi on PYHOME</title>
-    <link>https://example.com/tags/wifi/</link>
-    <description>Recent content in WiFi on PYHOME</description>
+    <title>esp-homekit on PYHOME</title>
+    <link>https://example.com/tags/esp-homekit/</link>
+    <description>Recent content in esp-homekit on PYHOME</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
     <lastBuildDate>Wed, 29 Apr 2020 12:54:28 +0800</lastBuildDate>
     
-	<atom:link href="https://example.com/tags/wifi/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://example.com/tags/esp-homekit/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -19,15 +19,6 @@
       
       <guid>https://example.com/use-esp-homekit-to-esp8266/</guid>
       <description>中文版本 esp-homekit 是 Apple HomeKit 配件服务器库，可以在 esp8266 和 esp32 上使用，以下是 esp-homekit 是基于 ESP8266_RTOS_SDK 在 esp8266 上的移植步骤。 组件 esp-homekit esp-wolfssl esp-http-parser 步骤 下载这些库到 compnents，并重命名文</description>
-    </item>
-    
-    <item>
-      <title>ESP8266/8285 开发记录</title>
-      <link>https://example.com/esp8266-8285-%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95/</link>
-      <pubDate>Tue, 21 Apr 2020 13:21:43 +0800</pubDate>
-      
-      <guid>https://example.com/esp8266-8285-%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95/</guid>
-      <description>启动报错 csum err ets_main.c 解决办法 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 ets Jan 8 2013,rst cause:2, boot mode:(3,6) load 0x40100000, len 25020, room 16 tail 12 chksum 0xef ho 0 tail 12 room 4 load 0x00000000, len 0, room 12 tail 0 chksum 0xef load 0x00000000, len 0, room 4 tail 0 chksum 0xef csum</description>
     </item>
     
   </channel>

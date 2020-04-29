@@ -2,12 +2,15 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://example.com/categories/</loc><lastmod>2020-04-21T14:03:43&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://example.com/categories/esp8266/</loc><lastmod>2020-04-21T14:03:43&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://example.com/categories/</loc><lastmod>2020-04-29T13:08:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://example.com/tags/esp-homekit/</loc><lastmod>2020-04-29T13:08:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://example.com/categories/esp8266/</loc><lastmod>2020-04-29T13:08:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://example.com/posts/</loc><lastmod>2020-04-29T13:08:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://example.com/</loc><lastmod>2020-04-29T13:08:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://example.com/tags/</loc><lastmod>2020-04-29T13:08:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://example.com/use-esp-homekit-to-esp8266/</loc><lastmod>2020-04-29T13:08:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://example.com/tags/wifi/</loc><lastmod>2020-04-29T13:08:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://example.com/tags/%E8%AE%B0%E5%BD%95/</loc><lastmod>2020-04-29T13:08:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://example.com/esp8266-8285-%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95/</loc><lastmod>2020-04-21T14:03:43&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://example.com/posts/</loc><lastmod>2020-04-21T14:03:43&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://example.com/</loc><lastmod>2020-04-21T14:03:43&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://example.com/tags/</loc><lastmod>2020-04-21T14:03:43&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://example.com/tags/wifi/</loc><lastmod>2020-04-21T14:03:43&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://example.com/tags/%E8%AE%B0%E5%BD%95/</loc><lastmod>2020-04-21T14:03:43&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://example.com/use-hugo-to-bulid-blog-in-windows/</loc><lastmod>2020-04-21T09:35:18&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url></urlset>
+            <loc>https://example.com/categories/blog/</loc><lastmod>2020-04-29T13:08:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://example.com/use-hugo-to-bulid-blog-in-windows/</loc><lastmod>2020-04-29T13:08:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url></urlset>

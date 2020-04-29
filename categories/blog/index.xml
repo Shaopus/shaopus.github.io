@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>blog on PYHOME</title>
+    <link>https://example.com/categories/blog/</link>
+    <description>Recent content in blog on PYHOME</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Fri, 17 Apr 2020 12:52:51 +0800</lastBuildDate>
+    
+	<atom:link href="https://example.com/categories/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Windows&#43;Hugo&#43;GithubPage搭建简单个人博客</title>
+      <link>https://example.com/use-hugo-to-bulid-blog-in-windows/</link>
+      <pubDate>Fri, 17 Apr 2020 12:52:51 +0800</pubDate>
+      
+      <guid>https://example.com/use-hugo-to-bulid-blog-in-windows/</guid>
+      <description>安装 hugo 二进制安装(推荐：简单、快速)，到 hugo Releases 下载对应的操作系统版本的 hugo 二进制文件（ hugo 或者 hugo.exe ）； 创建文件夹。此处举例： F 盘创建 hugo/bin ，将解压后的 hugo.exe</description>
+    </item>
+    
+  </channel>
+</rss>
